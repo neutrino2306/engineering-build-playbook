@@ -1,43 +1,100 @@
-# Engineering Interview Playbook
+# 3 小时 AI-Assisted Engineering Interview 私人作战手册
 
-A reusable playbook for a time-boxed, AI-assisted software engineering build session.
+这是一个 **私人、通用、可复用的 interview workflow repository**。
 
-## Working model
+它不是任何特定公司的真题答案，也不包含泄露题目。
+用途是：在严格限时的 build interview 中，快速调用已经准备好的工作方法，减少临场认知负担。
 
-- I own the decisions.
-- AI helps with analysis, scaffolding, debugging, review, and time management.
-- Reasoning can be in Chinese for speed.
-- Code, identifiers, API names, tests, README content, commit messages, and final engineering artifacts stay in English.
-- Ship a coherent working prototype before adding optional features.
-- Prefer a simple system I can fully explain over a larger system I cannot defend.
+---
 
-## Suggested workflow
+## 我的核心原则
 
-1. Compare prompts before choosing.
-2. Define a strict 3-hour scope.
-3. Create a minimal end-to-end vertical slice.
-4. Validate the deployment path early.
-5. Add only high-value features.
-6. Test, clean up, document, and prepare the demo.
-7. Stop adding features near the end.
-8. Be ready to explain every major trade-off.
+1. **我负责最终判断，AI 是 pair programmer / reviewer / project manager。**
+2. 优先级：
+   **正确性 > end-to-end working > 可部署 > 可解释 > 测试 > polish > 额外 feature**
+3. 先做最小 vertical slice，再扩展。
+4. 尽早验证 deployment，不要最后 10 分钟第一次部署。
+5. 不 over-engineer。
+6. 所有最终工程 artifact 使用英文：
+   - code
+   - identifiers
+   - API
+   - filenames in the actual interview project
+   - comments/docstrings
+   - tests
+   - README
+   - commit messages
+7. 与 AI 的内部 reasoning 可以中文，以减少沟通时间和认知压力。
+8. 如果现场规则与本仓库冲突，以现场规则为最高优先级。
 
-## Files
+---
 
-- `00_START_HERE.md` — first prompts and session setup
-- `01_PROMPT_SELECTION.md` — compare candidate prompts
-- `02_SCOPE_AND_ARCHITECTURE.md` — define MVP and architecture
-- `03_TIME_MANAGEMENT.md` — 180-minute plan and replanning prompts
-- `04_BUILD_WITH_AI.md` — implementation workflow
-- `05_DEBUGGING.md` — debugging prompts
-- `06_DEPLOYMENT.md` — deployment checklist
-- `07_FINAL_CHECK.md` — final 30–45 minute checklist
-- `08_CODE_REVIEW.md` — prepare for technical review
-- `09_ENGLISH_MICRO_PROMPTS.md` — very short fallback prompts
-- `10_DECISIONS_TEMPLATE.md` — optional engineering decision log
-- `11_README_TEMPLATE.md` — minimal project README template
+## 我的默认技术路线
 
-## Important
+除非题目明确要求其他方案：
 
-This repository contains generic workflow templates, not solutions to any specific interview problem.
-Follow the interviewer's current rules if they conflict with anything here.
+### Backend
+- Python
+- Flask
+- RESTful JSON API
+- 简单、明确的 validation / error handling
+
+### Persistence
+- 优先 SQLite（如果满足 prototype）
+- 如题目确实需要更完整 relational DB，再考虑 PostgreSQL / MySQL
+
+### Testing
+- pytest
+- 优先验证：
+  - happy path
+  - invalid input
+  - not found / conflict
+  - core business rule
+  - critical failure path
+
+### Frontend
+- 非必要不做复杂 frontend
+- 如果必须有 UI：最小可用即可
+- 不把时间浪费在视觉 polish
+
+### Deployment
+- 选择最简单、最熟悉、最少依赖的 path
+- 早 deploy
+- 给陌生环境留 buffer
+
+### 架构风格
+优先：
+
+**simple + working + deployed + tested + explainable**
+
+而不是：
+
+**complex + impressive-looking + partially working**
+
+---
+
+## 推荐现场顺序
+
+1. `00_开场与规则.md`
+2. `01_我的技术背景与默认偏好.md`
+3. `02_拿到题后的选题比较.md`
+4. `03_三小时Scope与架构设计.md`
+5. `04_180分钟时间计划.md`
+6. `05_Cursor_Claude协作方式.md`
+7. `06_实现阶段常用Prompt.md`
+8. `07_Debug与RootCause.md`
+9. `08_部署作战手册.md`
+10. `09_中途时间重规划.md`
+11. `10_最后45分钟冻结与检查.md`
+12. `11_CodeReview持续记录模板.md`
+13. `12_15分钟Break技术拷打准备.md`
+14. `13_45分钟CodeReview模拟.md`
+15. `14_没有中文输入法时的英文救命句.md`
+16. `15_最终项目README模板.md`
+17. `16_行为面快速准备.md`
+
+---
+
+## 面试当天的一句话
+
+**不要证明我能把系统做复杂。证明我能在约束下做出正确判断，并把一个完整东西 ship 出来。**
