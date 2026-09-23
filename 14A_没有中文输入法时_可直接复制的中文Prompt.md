@@ -78,7 +78,6 @@
 > 我的默认技术偏好：
 > - Python
 > - FastAPI（默认首选）
-> - Flask（fallback，如果当前题目/环境下明显更简单）
 > - REST API
 > - SQL / SQLite / MySQL
 > - pytest
