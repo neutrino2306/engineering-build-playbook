@@ -1,6 +1,6 @@
-# 3 小时 AI-Assisted Engineering Interview 私人作战手册
+# 3 小时私人作战手册
 
-这是一个 **私人、通用、可复用的 interview workflow repository**。
+这是一个 **私人、通用、可复用的workflow repository**。
 
 它不是任何特定公司的真题答案，也不包含泄露题目。
 用途是：在严格限时的 build interview 中，快速调用已经准备好的工作方法，减少临场认知负担。
