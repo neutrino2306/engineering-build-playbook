@@ -1,0 +1,22 @@
+在 Cursor 终端里：
+
+cd /workspaces/secure-file-share
+pkill -f "uvicorn app.main"
+uvicorn app.main:create_app --factory > /tmp/server.log 2>&1 &
+sleep 2
+curl -s localhost:8000/healthz; echo
+
+
+演示方式一：浏览器，打开 http://localhost:8000/，用 alice-demo-key-123 连接，上传、分享、打开链接、看 Activity、删除。
+
+演示方式二：命令行
+ALICE="X-API-Key: alice-demo-key-123"
+echo "demo file" > /tmp/demo.txt
+FILE_ID=$(curl -s -X POST localhost:8000/v1/files -H "$ALICE" -F "file=@/tmp/demo.txt" | python3 -c "import sys,json;print(json.load(sys.stdin)['id'])")
+URL=$(curl -s -X POST localhost:8000/v1/files/$FILE_ID/links -H "$ALICE" -H "Content-Type: application/json" -d '{"ttl_seconds": 600}' | python3 -c "import sys,json;print(json.load(sys.stdin)['url'])")
+curl -s "$URL"; echo
+curl -s "${URL}x"; echo
+
+演示测试：pytest -v
+演示 CI：打开 https://github.com/neutrino2306/secure-file-share/actions，点最新一次，展开 Docker 任务里的 "Signed link still works after a container restart" 步骤。
+
