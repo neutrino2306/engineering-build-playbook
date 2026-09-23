@@ -49,7 +49,7 @@
 
 > Review the current git diff as a senior engineer.
 >
-> 用中文解释。
+> 用中文详细解释。不要抽象，打比方，举例子
 >
 > 检查：
 > - correctness
