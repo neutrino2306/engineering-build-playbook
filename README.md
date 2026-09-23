@@ -35,9 +35,11 @@
 
 ### Backend
 - Python
-- Flask
+- FastAPI（默认首选）
 - RESTful JSON API
-- 简单、明确的 validation / error handling
+- Pydantic-style request / response validation
+- 简单、明确的 error handling
+- Flask 作为 fallback：如果现场环境或题目让 Flask 明显更简单，可以切回 Flask
 
 ### Persistence
 - 优先 SQLite（如果满足 prototype）
@@ -90,8 +92,9 @@
 13. `12_15分钟Break技术拷打准备.md`
 14. `13_45分钟CodeReview模拟.md`
 15. `14_没有中文输入法时的英文救命句.md`
-16. `15_最终项目README模板.md`
-17. `16_行为面快速准备.md`
+16. `14A_没有中文输入法时_可直接复制的中文Prompt.md`
+17. `15_最终项目README模板.md`
+18. `16_行为面快速准备.md`
 
 ---
 

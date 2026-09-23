@@ -23,7 +23,7 @@ Short explanation of the main components and data flow.
 ## Tech Stack
 
 - Python
-- Flask
+- FastAPI
 - SQLite / PostgreSQL / ...
 - pytest
 - Deployment platform
