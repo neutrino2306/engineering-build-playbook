@@ -1,10 +1,5 @@
 # 3 小时私人作战手册
 
-这是一个 **私人、通用、可复用的workflow repository**。
-
-它不是任何特定公司的真题答案，也不包含泄露题目。
-用途是：在严格限时的 build interview 中，快速调用已经准备好的工作方法，减少临场认知负担。
-
 如果没有中文输入法 我就谷歌翻译算了  网页开一下 然后复制粘贴英文的
 https://www.archchinese.com/type_chinese.html
 ---
