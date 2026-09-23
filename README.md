@@ -6,7 +6,7 @@
 用途是：在严格限时的 build interview 中，快速调用已经准备好的工作方法，减少临场认知负担。
 
 如果没有中文输入法 我就谷歌翻译算了  网页开一下 然后复制粘贴英文的
-
+https://www.archchinese.com/type_chinese.html
 ---
 ## 陌生电脑上 到底要怎么设置中文输入法
 
