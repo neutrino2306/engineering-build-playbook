@@ -39,7 +39,6 @@
 - RESTful JSON API
 - Pydantic-style request / response validation
 - 简单、明确的 error handling
-- Flask 作为 fallback：如果现场环境或题目让 Flask 明显更简单，可以切回 Flask
 
 ### Persistence
 - 优先 SQLite（如果满足 prototype）
